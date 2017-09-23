@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineKata", "VendingMachineKata\VendingMachineKata.csproj", "{EBEFFEE8-91E1-44B6-BD14-AA65F2677C6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineKata.Tests", "VendingMachineKata.Tests\VendingMachineKata.Tests.csproj", "{A558FC30-CF96-4FE9-92F5-09666E730EAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EBEFFEE8-91E1-44B6-BD14-AA65F2677C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBEFFEE8-91E1-44B6-BD14-AA65F2677C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBEFFEE8-91E1-44B6-BD14-AA65F2677C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A558FC30-CF96-4FE9-92F5-09666E730EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A558FC30-CF96-4FE9-92F5-09666E730EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A558FC30-CF96-4FE9-92F5-09666E730EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A558FC30-CF96-4FE9-92F5-09666E730EAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
