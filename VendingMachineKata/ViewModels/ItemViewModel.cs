@@ -72,6 +72,14 @@ namespace VendingMachineKata.ViewModels
             return amount;
         }
 
-        
+        public bool Dispense()
+        {
+            if(Quantity > 0)
+            {
+                Quantity--;
+                return true;
+            }
+            return false;
+        }
     }
 }
