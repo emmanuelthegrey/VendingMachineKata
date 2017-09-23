@@ -57,7 +57,14 @@ namespace VendingMachineKata.ViewModels
                 }
             }
         }
-           
+
+        public int Empty()
+        {
+            var amount = Quantity;
+            Quantity = 0;
+            return amount;
+        }
+
         public int Refill()
         {
             var amount = MAXQUANITY - _currentQuantity;

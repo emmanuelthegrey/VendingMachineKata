@@ -36,5 +36,13 @@ namespace VendingMachineKata.Tests.ViewModelTests
             chips.Refill();
             Assert.AreEqual(15, chips.Quantity);
         }
+        [Test]
+        public void WhenEmptyIsCalledQuantityIsZero()
+        {
+            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
+            chips.Refill();
+            chips.Empty();
+            Assert.AreEqual(0, chips.Quantity);
+        }
     }
 }
