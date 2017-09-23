@@ -4,6 +4,47 @@
              xmlns:local="clr-namespace:VendingMachineKata"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="VendingMachineTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect 
+                                      ShadowDepth="6"
+                                      Direction="135"
+                                      Color="Maroon"
+                                      Opacity="0.35"
+                                      BlurRadius="0.0"/>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="VendingList" TargetType="ListView">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style x:Key="VendingButton" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style x:Key="InformationLabel" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style x:Key="CoinButton" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Green"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style x:Key="ManagerButton" TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
     </Application.Resources>
 </Application>
