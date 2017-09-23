@@ -19,5 +19,14 @@ namespace VendingMachineKata.Tests.ViewModelTests
 
             Assert.AreEqual(Visibility.Visible, chips.ItemMessagesToCustomerVisibility);
         }
+
+        [Test]
+        public void WhenRefillIsCalledQuantityShouldBe15()
+        {
+            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
+            chips.Refill();
+
+            Assert.AreEqual(15, chips.Quantity);
+        }
     }
 }

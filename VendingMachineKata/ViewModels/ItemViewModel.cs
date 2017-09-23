@@ -64,5 +64,7 @@ namespace VendingMachineKata.ViewModels
             Quantity += amount;
             return amount;
         }
+
+        
     }
 }
