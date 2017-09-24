@@ -17,12 +17,12 @@ namespace VendingMachineKata.ViewModels
             set { _customerAmountInserted = value; }
         }
 
-        private double _customerTotalInserted;
+        private double _itemdRequestedTotalCost;
 
-        public double CustomerTotalInserted
+        public double ItemRequestedTotalCost
         {
-            get { return _customerTotalInserted; }
-            set { _customerTotalInserted = value; }
+            get { return _itemdRequestedTotalCost; }
+            set { _itemdRequestedTotalCost = value; }
         }
 
         private double _customerChangeToReturn;
@@ -45,7 +45,7 @@ namespace VendingMachineKata.ViewModels
         {
             CustomerAmountInserted = 0;
             CustomerChangeToReturn = 0;
-            CustomerTotalInserted = 0;
+            ItemRequestedTotalCost = 0;
 
             MachineMoneyTotal = 0;
         }
@@ -72,6 +72,10 @@ namespace VendingMachineKata.ViewModels
             }
 
             return 0.00;
+        }
+        public void SelectedItemsPrice(double value)
+        {
+            ItemRequestedTotalCost = value;
         }
     }
 }

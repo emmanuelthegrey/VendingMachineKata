@@ -35,5 +35,15 @@ namespace VendingMachineKata.Tests.ViewModelTests
             moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
             Assert.AreEqual(0.25, moneyMangerViewModel.CustomerAmountInserted);
         }
+
+        [Test]
+        public void InsertingQuaterDimeAndNickleReturns40Cents()
+        {
+            MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
+            moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
+            moneyMangerViewModel.Insert(CoinWeight.Nickle, CoinDiameter.Nickle);
+            moneyMangerViewModel.Insert(CoinWeight.Dime, CoinDiameter.Dime);
+            Assert.AreEqual(0.40, moneyMangerViewModel.CustomerAmountInserted);
+        }
     }
 }
