@@ -80,7 +80,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         //    moneyMangerViewModel.Tranaction();
         //    Assert.AreEqual(-0.75, moneyMangerViewModel.CustomerChangeToReturn);
         //}
-
+        [Test]
         public void IsInsertedValueEqualToOrGreaterSelectedItemPriceShouldReturnFalse()
         {
             MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
@@ -89,6 +89,20 @@ namespace VendingMachineKata.Tests.ViewModelTests
             moneyMangerViewModel.SelectedItemsPrice(1.00);
 
             Assert.AreNotEqual(true, moneyMangerViewModel.IsInsertedValueGreaterThanOrEqualToSelectedItemsPrice());
+        }
+
+        [Test]
+        public void IsInsertedValueEqualToOrGreaterSelectedItemPriceShouldReturnTrue()
+        {
+            MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
+            moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
+            moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
+            moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
+            moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
+
+            moneyMangerViewModel.SelectedItemsPrice(1.00);
+
+            Assert.AreEqual(true, moneyMangerViewModel.IsInsertedValueGreaterThanOrEqualToSelectedItemsPrice());
         }
     }
 }
