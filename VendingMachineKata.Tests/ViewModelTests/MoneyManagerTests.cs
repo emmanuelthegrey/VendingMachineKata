@@ -68,5 +68,27 @@ namespace VendingMachineKata.Tests.ViewModelTests
             moneyMangerViewModel.Tranaction();
             Assert.AreEqual(0.25, moneyMangerViewModel.CustomerChangeToReturn);
         }
+
+        //[Test]
+        //public void TranactionWithNotEnoughMoney()
+        //{
+        //    MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
+        //    moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
+          
+
+        //    moneyMangerViewModel.SelectedItemsPrice(1.00);
+        //    moneyMangerViewModel.Tranaction();
+        //    Assert.AreEqual(-0.75, moneyMangerViewModel.CustomerChangeToReturn);
+        //}
+
+        public void IsInsertedValueEqualToOrGreaterSelectedItemPriceShouldReturnFalse()
+        {
+            MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
+            moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
+
+            moneyMangerViewModel.SelectedItemsPrice(1.00);
+
+            Assert.AreNotEqual(true, moneyMangerViewModel.IsInsertedValueGreaterThanOrEqualToSelectedItemsPrice());
+        }
     }
 }

@@ -85,6 +85,15 @@ namespace VendingMachineKata.ViewModels
             ItemRequestedTotalCost = 0;
             CustomerAmountInserted = 0;
         }
+
+        public bool IsInsertedValueGreaterThanOrEqualToSelectedItemsPrice()
+        {
+           if(CustomerAmountInserted >= ItemRequestedTotalCost)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
 
