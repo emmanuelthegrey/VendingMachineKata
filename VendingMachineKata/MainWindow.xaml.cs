@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VendingMachineKata.ViewModels;
 
 namespace VendingMachineKata
 {
@@ -20,9 +21,14 @@ namespace VendingMachineKata
     /// </summary>
     public partial class MainWindow : Window
     {
+        private VendingMachineViewModel _rickAndMortysVendingMachine = new VendingMachineViewModel();
         public MainWindow()
         {
+
+            
             InitializeComponent();
+            DataContext = _rickAndMortysVendingMachine;
+
         }
     }
 }

@@ -54,5 +54,6 @@ namespace VendingMachineKata.Tests.ViewModelTests
 
             Assert.AreEqual(0.10, vendingMachineViewModel.MoneyInMachine.CustomerAmountInserted);
         }
+
     }
 }

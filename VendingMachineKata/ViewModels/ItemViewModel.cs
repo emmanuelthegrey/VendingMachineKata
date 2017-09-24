@@ -22,14 +22,14 @@ namespace VendingMachineKata.ViewModels
 
         public Item Item { get {return _itemModel; } }
 
-        private int id;
+        
 
         public int ID
         {
             get { return _itemModel.ID; }
            
         }
-        private int quantity;
+        
 
         public int Quantity
         {
@@ -49,11 +49,11 @@ namespace VendingMachineKata.ViewModels
             {
                 if(Quantity > 0)
                 {
-                   return Visibility.Hidden;
+                   return Visibility.Visible;
                 }
                 else
                 {
-                    return Visibility.Visible;
+                    return Visibility.Hidden;
                 }
             }
         }

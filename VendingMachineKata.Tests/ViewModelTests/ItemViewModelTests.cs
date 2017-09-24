@@ -17,7 +17,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         {
             ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
 
-            Assert.AreEqual(Visibility.Visible, chips.ItemMessagesToCustomerVisibility);
+            Assert.AreEqual(Visibility.Hidden, chips.ItemMessagesToCustomerVisibility);
         }
 
         [Test]

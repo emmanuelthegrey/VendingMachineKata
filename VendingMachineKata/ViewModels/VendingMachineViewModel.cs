@@ -12,6 +12,7 @@ namespace VendingMachineKata.ViewModels
     {
 
         public DelegateCommand PurchaseCommand { get; private set; }
+        public DelegateCommand RefillCommand { get; private set; }
 
        public ObservableCollection<ItemViewModel> Items { get; set; }
         public MoneyMangerViewModel MoneyInMachine { get; set; }
@@ -28,7 +29,9 @@ namespace VendingMachineKata.ViewModels
 
             MoneyInMachine = new MoneyMangerViewModel();
 
+            
             PurchaseCommand = new DelegateCommand(Purchase);
+
         }
 
         public void Refill()
