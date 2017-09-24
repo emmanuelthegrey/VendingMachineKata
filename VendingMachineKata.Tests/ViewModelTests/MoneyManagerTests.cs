@@ -45,5 +45,13 @@ namespace VendingMachineKata.Tests.ViewModelTests
             moneyMangerViewModel.Insert(CoinWeight.Dime, CoinDiameter.Dime);
             Assert.AreEqual(0.40, moneyMangerViewModel.CustomerAmountInserted);
         }
+
+        [Test]
+        public void SelctedValueEqualsPassedParameter()
+        {
+            MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
+            moneyMangerViewModel.SelectedItemsPrice(1.00);
+            Assert.AreEqual(1.00, moneyMangerViewModel.ItemRequestedTotalCost);
+        }
     }
 }
