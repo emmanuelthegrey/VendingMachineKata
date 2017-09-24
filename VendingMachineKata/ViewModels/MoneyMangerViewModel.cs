@@ -7,14 +7,18 @@ using VendingMachineKata.Models;
 
 namespace VendingMachineKata.ViewModels
 {
-    public class MoneyMangerViewModel
+    public class MoneyMangerViewModel : ObservableObject
     {
         private double _customerAmountInserted;
 
         public double CustomerAmountInserted
         {
             get { return _customerAmountInserted; }
-            set { _customerAmountInserted = value; }
+            set
+            {
+                _customerAmountInserted = value;
+                OnPropertyChanged("CustomerAmountInserted");
+            }
         }
 
         private double _itemdRequestedTotalCost;
@@ -22,7 +26,11 @@ namespace VendingMachineKata.ViewModels
         public double ItemRequestedTotalCost
         {
             get { return _itemdRequestedTotalCost; }
-            set { _itemdRequestedTotalCost = value; }
+            set
+            {
+                _itemdRequestedTotalCost = value;
+                OnPropertyChanged("ItemRequestedTotalCost");
+            }
         }
 
         private double _customerChangeToReturn;
@@ -30,7 +38,11 @@ namespace VendingMachineKata.ViewModels
         public double CustomerChangeToReturn
         {
             get { return _customerChangeToReturn; }
-            set { _customerChangeToReturn = value; }
+            set
+            {
+                _customerChangeToReturn = value;
+                OnPropertyChanged("CustomerChangeToReturn");
+            }
         }
 
         private double _machineMoneyTotal;
@@ -38,7 +50,12 @@ namespace VendingMachineKata.ViewModels
         public double MachineMoneyTotal
         {
             get { return _machineMoneyTotal; }
-            set { _machineMoneyTotal = value; }
+            set
+            {
+                _machineMoneyTotal = value;
+                OnPropertyChanged("MachineMoneyTotal");
+
+            }
         }
 
         public MoneyMangerViewModel()

@@ -36,14 +36,16 @@ namespace VendingMachineKata.ViewModels
         public int Quantity
         {
             get { return _currentQuantity; }
-            private set { _currentQuantity = value; }
+            private set
+            {
+                _currentQuantity = value;
+                OnPropertyChanged("ItemMessagesToCustomerVisibility");
+                OnPropertyChanged("ItemNameDisplay");
+                OnPropertyChanged("Quantity");
+            }
         }
 
-        //public int PGQuantity
-        //{
-        //    get { return _currentPGQuantity; }
-        //    private set { _currentPGQuantity = value; }
-        //}
+       
 
         public string ItemNameDisplay
         {
@@ -57,11 +59,11 @@ namespace VendingMachineKata.ViewModels
             {
                 if(Quantity > 0)
                 {
-                   return Visibility.Visible;
+                   return Visibility.Hidden;
                 }
                 else
                 {
-                    return Visibility.Hidden;
+                    return Visibility.Visible;
                 }
             }
         }

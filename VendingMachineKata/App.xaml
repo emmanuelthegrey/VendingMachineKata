@@ -40,7 +40,7 @@
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="5"/>
         </Style>
-        <Style x:Key="ManagerButton" TargetType="Button">
+        <Style x:Key="AdminButton" TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Red"/>
             <Setter Property="Padding" Value="10"/>

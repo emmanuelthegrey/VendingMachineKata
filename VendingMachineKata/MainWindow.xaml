@@ -58,42 +58,30 @@
         </Button>
 
         <StackPanel Grid.Row="6" Grid.ColumnSpan="3">
-            <TextBlock Style="{StaticResource InformationLabel}">
-              Inserted: $0.00
-            </TextBlock>
-            <TextBlock Style="{StaticResource InformationLabel}">
-               Change: $0.00
-            </TextBlock>
+            <TextBlock Style="{StaticResource InformationLabel}" Text="{Binding MoneyInMachine.CustomerAmountInserted, StringFormat=CustomerAmountInserted ${0:0.00}}" />
+            <TextBlock Style="{StaticResource InformationLabel}" Text="{Binding MoneyInMachine.CustomerChangeToReturn, StringFormat=CustomerChangeToReturn ${0:0.00}}"/>
         </StackPanel>
 
         <DockPanel Margin="5" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="White">
             <TextBlock DockPanel.Dock="Top" FontSize="28" Style="{StaticResource InformationLabel}" HorizontalAlignment="Center">Inventory</TextBlock>
             <StackPanel DockPanel.Dock="Bottom">
-                <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16">
-                   Cola: 0
-                </TextBlock>
-                <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16">
-                    Chips: 0
-                </TextBlock>
-                <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16">
-                    Candy: 0
-                </TextBlock>
-                <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16">
-                    Portal Gun: 0
-                </TextBlock>
+                <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16" Text="{Binding Items[0].ItemNameDisplay}"/>
+                <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16" Text="{Binding Items[1].ItemNameDisplay}"/>
+                <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16" Text="{Binding Items[2].ItemNameDisplay}"/>
+                <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16" Text="{Binding Items[3].ItemNameDisplay}"/>
             </StackPanel>
         </DockPanel>
 
         <StackPanel Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="Black">
             <TextBlock DockPanel.Dock="Top" FontSize="28" Style="{StaticResource InformationLabel}" HorizontalAlignment="Center">Manager</TextBlock>
-            <Button Style="{StaticResource ManagerButton}" Click="OnClick_Refill">
-                Refill Supply
+            <Button Style="{StaticResource AdminButton}" Click="OnClick_Refill">
+                Refill
             </Button>
-            <!--<Button Style="{StaticResource ManagerButton}">
-                Empty Supply
+            <!--<Button Style="{StaticResource AdminButton}">
+                Empty Machine
             </Button>
-            <Button Style="{StaticResource ManagerButton}">
-                Withdraw Payment
+            <Button Style="{StaticResource AdminButton}">
+                Withdraw 
             </Button>-->
         </StackPanel>
     

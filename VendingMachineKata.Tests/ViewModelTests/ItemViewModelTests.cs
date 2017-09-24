@@ -12,13 +12,13 @@ namespace VendingMachineKata.Tests.ViewModelTests
     [TestFixture]
     class ItemViewModelTests
     {
-        [Test]
-        public void VisibilityShouldReturnHiddenWhenViewModelIsCreated()
-        {
-            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
+        //[Test]
+        //public void VisibilityShouldReturnHiddenWhenViewModelIsCreated()
+        //{
+        //    ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
 
-            Assert.AreEqual(Visibility.Hidden, chips.ItemMessagesToCustomerVisibility);
-        }
+        //    Assert.AreEqual(Visibility.Visible, chips.ItemMessagesToCustomerVisibility);
+        //}
 
         [Test]
         public void WhenRefillIsCalledQuantityShouldBe15()
