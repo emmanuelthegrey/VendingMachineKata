@@ -18,7 +18,9 @@ namespace VendingMachineKata.ViewModels
 
         private Item _itemModel;
         private const int MAXQUANITY = 15;
+        private const int MAXQUANITYPG = 1;
         private int _currentQuantity;
+       // private int _currentPGQuantity;
 
         public Item Item { get {return _itemModel; } }
 
@@ -36,6 +38,12 @@ namespace VendingMachineKata.ViewModels
             get { return _currentQuantity; }
             private set { _currentQuantity = value; }
         }
+
+        //public int PGQuantity
+        //{
+        //    get { return _currentPGQuantity; }
+        //    private set { _currentPGQuantity = value; }
+        //}
 
         public string ItemNameDisplay
         {
@@ -67,8 +75,17 @@ namespace VendingMachineKata.ViewModels
 
         public int RefillIndividualItemType()
         {
-            var amount = MAXQUANITY - _currentQuantity;
+            int amount;
+            if (String.Equals(Item.Name, "Portal Gun"))
+            {
+                amount = MAXQUANITYPG;
+                Quantity = MAXQUANITYPG;
+                return amount;
+            }
+            amount = MAXQUANITY - _currentQuantity;
             Quantity += amount;
+
+            
             return amount;
         }
 

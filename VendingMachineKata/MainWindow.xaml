@@ -44,23 +44,6 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Style="{StaticResource VendingList}" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="4">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <DockPanel>
-                        <Button Style="{StaticResource VendingButton}" DockPanel.Dock="Left">
-                            Purchase
-                        </Button>
-                        <StackPanel DockPanel.Dock="Right">
-                            <TextBlock Style="{StaticResource InformationLabel}">Title here</TextBlock>
-                            <TextBlock Style="{StaticResource InformationLabel}">Price here</TextBlock>
-                            <TextBlock Foreground="Red" Visibility="Hidden">Out of Stock!</TextBlock>
-                        </StackPanel>
-                    </DockPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
         <Button Style="{StaticResource CoinButton}" Grid.Row="5">
             $0.05
         </Button>
@@ -83,7 +66,7 @@
             </TextBlock>
         </StackPanel>
 
-        <DockPanel Margin="5" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="Black">
+        <DockPanel Margin="5" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="White">
             <TextBlock DockPanel.Dock="Top" FontSize="28" Style="{StaticResource InformationLabel}" HorizontalAlignment="Center">Inventory</TextBlock>
             <StackPanel DockPanel.Dock="Bottom">
                 <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16">
@@ -103,7 +86,7 @@
 
         <StackPanel Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="Black">
             <TextBlock DockPanel.Dock="Top" FontSize="28" Style="{StaticResource InformationLabel}" HorizontalAlignment="Center">Manager</TextBlock>
-            <Button Style="{StaticResource ManagerButton}">
+            <Button Style="{StaticResource ManagerButton}" Click="OnClick_Refill">
                 Refill Supply
             </Button>
             <!--<Button Style="{StaticResource ManagerButton}">

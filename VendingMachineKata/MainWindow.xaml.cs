@@ -30,5 +30,10 @@ namespace VendingMachineKata
             DataContext = _rickAndMortysVendingMachine;
 
         }
+
+        private void OnClick_Refill(object sender, RoutedEventArgs e)
+        {
+            _rickAndMortysVendingMachine.Refill();
+        }
     }
 }

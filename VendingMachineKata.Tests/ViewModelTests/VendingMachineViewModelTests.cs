@@ -19,14 +19,14 @@ namespace VendingMachineKata.Tests.ViewModelTests
         }
 
         [Test]
-        public void RefillAdds15QuantityToEachItem()
+        public void RefillAdds15QuantityToEachExceptPortalGunItem()
         {
             VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
             vendingMachineViewModel.Refill();
             Assert.AreEqual(15, vendingMachineViewModel.Items[0].Quantity);
             Assert.AreEqual(15, vendingMachineViewModel.Items[1].Quantity);
             Assert.AreEqual(15, vendingMachineViewModel.Items[2].Quantity);
-            Assert.AreEqual(15, vendingMachineViewModel.Items[3].Quantity);
+            Assert.AreEqual(1, vendingMachineViewModel.Items[3].Quantity);
         }
 
         [Test]
@@ -55,5 +55,15 @@ namespace VendingMachineKata.Tests.ViewModelTests
             Assert.AreEqual(0.10, vendingMachineViewModel.MoneyInMachine.CustomerAmountInserted);
         }
 
+        [Test]
+        public void PortalGunRefillsToOne()
+        {
+            VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
+            vendingMachineViewModel.Refill();
+            Assert.AreEqual(15, vendingMachineViewModel.Items[0].Quantity);
+            Assert.AreEqual(15, vendingMachineViewModel.Items[1].Quantity);
+            Assert.AreEqual(15, vendingMachineViewModel.Items[2].Quantity);
+            Assert.AreEqual(1, vendingMachineViewModel.Items[3].Quantity);
+        }
     }
 }
