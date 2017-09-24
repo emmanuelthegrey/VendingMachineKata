@@ -30,7 +30,10 @@ namespace VendingMachineKata.ViewModels
             PurchaseCommand = new DelegateCommand(Purchase);
         }
 
+        //public void CoinInserted()
+        //{
 
+        //}
 
         public void Purchase(object itemViewModel)
         {
@@ -47,7 +50,7 @@ namespace VendingMachineKata.ViewModels
             }
         }
 
-
+    
 
     }
 }
