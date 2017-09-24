@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelTests\ItemViewModelTests.cs" />
+    <Compile Include="ViewModelTests\MoneyManagerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
