@@ -77,6 +77,14 @@ namespace VendingMachineKata.ViewModels
         {
             ItemRequestedTotalCost = value;
         }
+
+        public void Tranaction()
+        {
+            CustomerChangeToReturn = CustomerAmountInserted - ItemRequestedTotalCost;
+            MachineMoneyTotal += ItemRequestedTotalCost;
+            ItemRequestedTotalCost = 0;
+            CustomerAmountInserted = 0;
+        }
     }
 }
 
