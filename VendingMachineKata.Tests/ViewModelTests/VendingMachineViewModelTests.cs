@@ -17,5 +17,13 @@ namespace VendingMachineKata.Tests.ViewModelTests
             VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
             Assert.AreEqual("cola : 0", vendingMachineViewModel.Items[0].ItemNameDisplay);
         }
+
+        [Test]
+        public void RefillAdds15QuantityToEachItem()
+        {
+            VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
+            vendingMachineViewModel.Refill();
+            Assert.AreEqual(15, vendingMachineViewModel.Items[0].Quantity);
+        }
     }
 }

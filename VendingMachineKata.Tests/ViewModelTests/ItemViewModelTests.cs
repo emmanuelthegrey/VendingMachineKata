@@ -24,7 +24,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         public void WhenRefillIsCalledQuantityShouldBe15()
         {
             ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
-            chips.Refill();
+            chips.RefillIndividualItemType();
 
             Assert.AreEqual(15, chips.Quantity);
         }
@@ -32,15 +32,15 @@ namespace VendingMachineKata.Tests.ViewModelTests
         public void WhenRefillIsCalledMoreThanOnceQuantityShouldBe15()
         {
             ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
-            chips.Refill();
-            chips.Refill();
+            chips.RefillIndividualItemType();
+            chips.RefillIndividualItemType();
             Assert.AreEqual(15, chips.Quantity);
         }
         [Test]
         public void WhenEmptyIsCalledQuantityIsZero()
         {
             ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
-            chips.Refill();
+            chips.RefillIndividualItemType();
             chips.Empty();
             Assert.AreEqual(0, chips.Quantity);
         }
@@ -48,7 +48,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         public void CallingDispenseSubtractsOneItemFromViewModel()
         {
             ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
-            chips.Refill();
+            chips.RefillIndividualItemType();
             chips.Dispense();
             Assert.AreEqual(14, chips.Quantity);
         }
@@ -57,7 +57,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         public void CallingDispenseTwiceSubtractsTwoItemsFromViewModel()
         {
             ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
-            chips.Refill();
+            chips.RefillIndividualItemType();
             chips.Dispense();
             chips.Dispense();
             Assert.AreEqual(13, chips.Quantity);
@@ -67,10 +67,10 @@ namespace VendingMachineKata.Tests.ViewModelTests
         public void CallingDispenseThenHittingRefillSetsQuantityBackTo15()
         {
             ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
-            chips.Refill();
+            chips.RefillIndividualItemType();
             chips.Dispense();
             chips.Dispense();
-            chips.Refill();
+            chips.RefillIndividualItemType();
             Assert.AreEqual(15, chips.Quantity);
         }
     }

@@ -30,10 +30,13 @@ namespace VendingMachineKata.ViewModels
             PurchaseCommand = new DelegateCommand(Purchase);
         }
 
-        //public void CoinInserted()
-        //{
-
-        //}
+        public void Refill()
+        {
+            foreach (var item in Items)
+            {
+                item.RefillIndividualItemType();
+            }
+        }
 
         public void Purchase(object itemViewModel)
         {
