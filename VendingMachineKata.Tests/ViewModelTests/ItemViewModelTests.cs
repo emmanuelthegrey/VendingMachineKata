@@ -41,7 +41,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         {
             ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
             chips.RefillIndividualItemType();
-            chips.Empty();
+            chips.EmptyIndividualItemType();
             Assert.AreEqual(0, chips.Quantity);
         }
         [Test]

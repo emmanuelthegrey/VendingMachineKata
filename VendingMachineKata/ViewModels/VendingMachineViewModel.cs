@@ -37,6 +37,13 @@ namespace VendingMachineKata.ViewModels
                 item.RefillIndividualItemType();
             }
         }
+        public void Empty()
+        {
+            foreach (var item in Items)
+            {
+                item.EmptyIndividualItemType();
+            }
+        }
 
         public void Purchase(object itemViewModel)
         {

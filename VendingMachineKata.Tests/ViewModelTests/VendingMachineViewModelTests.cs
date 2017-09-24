@@ -24,6 +24,26 @@ namespace VendingMachineKata.Tests.ViewModelTests
             VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
             vendingMachineViewModel.Refill();
             Assert.AreEqual(15, vendingMachineViewModel.Items[0].Quantity);
+            Assert.AreEqual(15, vendingMachineViewModel.Items[1].Quantity);
+            Assert.AreEqual(15, vendingMachineViewModel.Items[2].Quantity);
+            Assert.AreEqual(15, vendingMachineViewModel.Items[3].Quantity);
+        }
+
+        [Test]
+        public void EmptySetsQuantityToZero()
+        {
+            VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
+            vendingMachineViewModel.Refill();
+            vendingMachineViewModel.Empty();
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(0, vendingMachineViewModel.Items[0].Quantity);
+                Assert.AreEqual(0, vendingMachineViewModel.Items[1].Quantity);
+                Assert.AreEqual(0, vendingMachineViewModel.Items[2].Quantity);
+                Assert.AreEqual(0, vendingMachineViewModel.Items[3].Quantity);
+            });
+
         }
     }
 }

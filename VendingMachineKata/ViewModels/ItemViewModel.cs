@@ -58,7 +58,7 @@ namespace VendingMachineKata.ViewModels
             }
         }
 
-        public int Empty()
+        public int EmptyIndividualItemType()
         {
             var amount = Quantity;
             Quantity = 0;
