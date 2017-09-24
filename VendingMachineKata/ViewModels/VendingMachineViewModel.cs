@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VendingMachineKata.Models;
 
 namespace VendingMachineKata.ViewModels
 {
@@ -60,6 +61,10 @@ namespace VendingMachineKata.ViewModels
             }
         }
 
+        public void InsertChangeIntoMachine(CoinWeight cw, CoinDiameter cd)
+        {
+            MoneyInMachine.Insert(cw, cd);
+        }
     
 
     }

@@ -45,5 +45,14 @@ namespace VendingMachineKata.Tests.ViewModelTests
             });
 
         }
+
+        [Test]
+        public void InsertDimeIntoVendingMachineReturnsCorrectTenCents()
+        {
+            VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
+            vendingMachineViewModel.MoneyInMachine.Insert(Models.CoinWeight.Dime, Models.CoinDiameter.Dime);
+
+            Assert.AreEqual(0.10, vendingMachineViewModel.MoneyInMachine.CustomerAmountInserted);
+        }
     }
 }
