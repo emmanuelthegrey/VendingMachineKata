@@ -23,9 +23,9 @@ namespace VendingMachineKata.ViewModels
         public VendingMachineViewModel()
         {
             Items = new ObservableCollection<ItemViewModel>()   {
-                new ItemViewModel(1, "Cola", 1.00m),
-                new ItemViewModel(2, "Chips", 0.50m),
-                new ItemViewModel(3, "Candy", 0.65m),
+                new ItemViewModel(1, "Cola", 1.00M),
+                new ItemViewModel(2, "Chips", 0.50M),
+                new ItemViewModel(3, "Candy", 0.65M),
                 new ItemViewModel(4, "Portal Gun", Decimal.MaxValue)
 
             };

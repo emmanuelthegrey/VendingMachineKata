@@ -134,5 +134,15 @@ namespace VendingMachineKata.Tests.ViewModelTests
 
             Assert.AreEqual(2, moneyMangerViewModel.NickleCount);
         }
+
+        [Test]
+        public void IfBadCoinIsInsertedBadCoinCountEqualsOne()
+        {
+            MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
+            moneyMangerViewModel.Insert(CoinWeight.BadCoin, CoinDiameter.BadCoin);
+            
+
+            Assert.AreEqual(1, moneyMangerViewModel.BadCoinCount);
+        }
     }
 }

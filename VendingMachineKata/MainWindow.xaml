@@ -61,7 +61,9 @@
         <Button Style="{StaticResource CoinButton}" Grid.Row="7" Grid.Column="1" >
             Invalid Coin
         </Button>
-        <Button Style="{StaticResource CoinButton}" Grid.Row="5" Grid.Column="1" Click="OnClick_ReturnChange" Content="Return Change"/>
+        <Button Style="{StaticResource CoinButton}" Grid.Row="5" Grid.Column="1" Click="OnClick_ReturnChange" >
+            <TextBlock TextWrapping="Wrap">Return Change</TextBlock>
+        </Button>
 
 
 

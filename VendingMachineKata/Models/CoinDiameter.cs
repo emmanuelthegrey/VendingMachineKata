@@ -14,6 +14,8 @@ namespace VendingMachineKata.Models
         [Description("17.91 mm")]
         Dime = 17,
         [Description("24.26 mm")]
-        Quarter = 24
+        Quarter = 24,
+        [Description("Bad Coin")]
+        BadCoin = 71
     }
 }

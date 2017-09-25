@@ -14,7 +14,9 @@ namespace VendingMachineKata.Models
         [Description("2.268 Grams")]
         Dime = 2,
         [Description("5.670 Grams")]
-        Quarter = 6
+        Quarter = 6,
+        [Description("Bad Coin")]
+        BadCoin = 71
 
     }
 }

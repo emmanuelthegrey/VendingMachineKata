@@ -10,7 +10,7 @@ namespace VendingMachineKata.Models
     {
         public int NickleCount { get; set; }
         public int DimeCount { get; set; }
-        public int BadCoin { get; private set; }
+        public int BadCoinCount { get; set; }
         public int QuaterCount { get; set; }
 
 
@@ -19,7 +19,7 @@ namespace VendingMachineKata.Models
             NickleCount = 0;
             QuaterCount = 0;
             DimeCount = 0;
-            BadCoin = 0;
+            BadCoinCount = 0;
         }
     }
 }

@@ -87,7 +87,10 @@ namespace VendingMachineKata.ViewModels
         {
             get { return coinsInMachine.NickleCount; }
         }
-
+        public int BadCoinCount
+        {
+            get { return coinsInMachine.BadCoinCount; }
+        }
 
 
         public void Insert(CoinWeight coinWeight, CoinDiameter coinDiameter)
@@ -106,6 +109,10 @@ namespace VendingMachineKata.ViewModels
             else if (value.Equals(0.25m))
             {
                 coinsInMachine.QuaterCount++;
+            }
+            else
+            {
+                coinsInMachine.BadCoinCount++;
             }
 
             CustomerAmountInserted += value;
