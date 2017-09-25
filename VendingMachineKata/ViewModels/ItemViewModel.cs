@@ -10,7 +10,7 @@ namespace VendingMachineKata.ViewModels
 {
    public class ItemViewModel: ObservableObject
     {
-        public ItemViewModel(int id, string name, double price)
+        public ItemViewModel(int id, string name, decimal price)
         {
             _itemModel = new Item(id, name, price);
             Quantity = 0;

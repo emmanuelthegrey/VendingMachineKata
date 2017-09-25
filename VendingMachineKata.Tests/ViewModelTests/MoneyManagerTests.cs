@@ -17,7 +17,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         {
             MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
             moneyMangerViewModel.Insert(CoinWeight.Dime, CoinDiameter.Dime);
-            Assert.AreEqual(0.10, moneyMangerViewModel.CustomerAmountInserted);
+            Assert.AreEqual(0.10m, moneyMangerViewModel.CustomerAmountInserted);
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         {
             MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
             moneyMangerViewModel.Insert(CoinWeight.Nickle, CoinDiameter.Nickle);
-            Assert.AreEqual(0.05, moneyMangerViewModel.CustomerAmountInserted);
+            Assert.AreEqual(0.05m, moneyMangerViewModel.CustomerAmountInserted);
         }
 
         [Test]
@@ -33,7 +33,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         {
             MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
             moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
-            Assert.AreEqual(0.25, moneyMangerViewModel.CustomerAmountInserted);
+            Assert.AreEqual(0.25m, moneyMangerViewModel.CustomerAmountInserted);
         }
 
         [Test]
@@ -43,15 +43,15 @@ namespace VendingMachineKata.Tests.ViewModelTests
             moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
             moneyMangerViewModel.Insert(CoinWeight.Nickle, CoinDiameter.Nickle);
             moneyMangerViewModel.Insert(CoinWeight.Dime, CoinDiameter.Dime);
-            Assert.AreEqual(0.40, moneyMangerViewModel.CustomerAmountInserted);
+            Assert.AreEqual(0.40m, moneyMangerViewModel.CustomerAmountInserted);
         }
 
         [Test]
         public void SelctedValueEqualsPassedParameter()
         {
             MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
-            moneyMangerViewModel.SelectedItemsPrice(1.00);
-            Assert.AreEqual(1.00, moneyMangerViewModel.ItemRequestedTotalCost);
+            moneyMangerViewModel.SelectedItemsPrice(1.00m);
+            Assert.AreEqual(1.00m, moneyMangerViewModel.ItemRequestedTotalCost);
         }
 
         [Test]
@@ -64,9 +64,9 @@ namespace VendingMachineKata.Tests.ViewModelTests
             moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
             moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
 
-            moneyMangerViewModel.SelectedItemsPrice(1.00);
+            moneyMangerViewModel.SelectedItemsPrice(1.00m);
             moneyMangerViewModel.Tranaction();
-            Assert.AreEqual(0.25, moneyMangerViewModel.CustomerChangeToReturn);
+            Assert.AreEqual(0.25m, moneyMangerViewModel.CustomerChangeToReturn);
         }
 
         //[Test]
@@ -86,7 +86,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
             MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
             moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
 
-            moneyMangerViewModel.SelectedItemsPrice(1.00);
+            moneyMangerViewModel.SelectedItemsPrice(1.00m);
 
             Assert.AreNotEqual(true, moneyMangerViewModel.IsInsertedValueGreaterThanOrEqualToSelectedItemsPrice());
         }
@@ -100,9 +100,19 @@ namespace VendingMachineKata.Tests.ViewModelTests
             moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
             moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
 
-            moneyMangerViewModel.SelectedItemsPrice(1.00);
+            moneyMangerViewModel.SelectedItemsPrice(1.00m);
 
             Assert.AreEqual(true, moneyMangerViewModel.IsInsertedValueGreaterThanOrEqualToSelectedItemsPrice());
+        }
+
+        [Test]
+        public void IfTwoQuatersAreInsertedQuaterCountEqualsTwo()
+        {
+            MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
+            moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
+            moneyMangerViewModel.Insert(CoinWeight.Quarter, CoinDiameter.Quarter);
+
+            Assert.AreEqual(2, moneyMangerViewModel.QuaterCount);
         }
     }
 }

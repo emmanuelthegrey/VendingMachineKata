@@ -14,16 +14,19 @@ namespace VendingMachineKata.ViewModels
         public DelegateCommand PurchaseCommand { get; private set; }
         public DelegateCommand RefillCommand { get; private set; }
 
+        
+        
+
        public ObservableCollection<ItemViewModel> Items { get; set; }
         public MoneyMangerViewModel MoneyInMachine { get; set; }
 
         public VendingMachineViewModel()
         {
             Items = new ObservableCollection<ItemViewModel>()   {
-                new ItemViewModel(1, "cola", 1.00),
-                new ItemViewModel(2, "chips", 0.50),
-                new ItemViewModel(3, "candy", 0.65),
-                new ItemViewModel(4, "Portal Gun", Double.MaxValue)
+                new ItemViewModel(1, "Cola", 1.00m),
+                new ItemViewModel(2, "Chips", 0.50m),
+                new ItemViewModel(3, "Candy", 0.65m),
+                new ItemViewModel(4, "Portal Gun", Decimal.MaxValue)
 
             };
 
@@ -32,6 +35,21 @@ namespace VendingMachineKata.ViewModels
             
             PurchaseCommand = new DelegateCommand(Purchase);
 
+        }
+
+        public void InsertDime()
+        {
+            InsertChangeIntoMachine(CoinWeight.Dime, CoinDiameter.Dime);
+        }
+
+        public void InsertNickel()
+        {
+            InsertChangeIntoMachine(CoinWeight.Nickle, CoinDiameter.Nickle);
+        }
+
+        public void InsertQuater()
+        {
+            InsertChangeIntoMachine(CoinWeight.Quarter, CoinDiameter.Quarter);
         }
 
         public void Refill()
@@ -68,7 +86,20 @@ namespace VendingMachineKata.ViewModels
         {
             MoneyInMachine.Insert(cw, cd);
         }
-    
 
+        public void ReturnChange()
+        {
+            if(MoneyInMachine.CustomerAmountInserted > 0.00m)
+            {
+                MoneyInMachine.CustomerChangeToReturn = MoneyInMachine.CustomerAmountInserted;
+
+                MoneyInMachine.CustomerAmountInserted = 0;
+            }
+        }
+
+        public void AddQuater()
+        {
+
+        }
     }
 }

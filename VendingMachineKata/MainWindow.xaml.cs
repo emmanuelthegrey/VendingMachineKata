@@ -35,5 +35,25 @@ namespace VendingMachineKata
         {
             _rickAndMortysVendingMachine.Refill();
         }
+
+        private void OnClick_InsertDime(object sender, RoutedEventArgs e)
+        {
+            _rickAndMortysVendingMachine.InsertDime();
+        }
+
+        private void OnClick_InsertNickle(object sender, RoutedEventArgs e)
+        {
+            _rickAndMortysVendingMachine.InsertNickel();
+        }
+
+        private void OnClick_InsertQuater(object sender, RoutedEventArgs e)
+        {
+            _rickAndMortysVendingMachine.InsertQuater();
+        }
+
+        private void OnClick_ReturnChange(object sender, RoutedEventArgs e)
+        {
+            _rickAndMortysVendingMachine.ReturnChange();
+        }
     }
 }

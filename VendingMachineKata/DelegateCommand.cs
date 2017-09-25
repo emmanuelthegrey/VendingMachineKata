@@ -7,38 +7,47 @@ using System.Windows.Input;
 
 namespace VendingMachineKata
 {
-   public class DelegateCommand : ICommand
+    public class DelegateCommand : ICommand
     {
-        readonly Action<object> _execute;
-        readonly Predicate<object> _canExecute;
+        private readonly Predicate<object> _canExecute;
+        private readonly Action<object> _execute;
 
-        public DelegateCommand(Action<object> execute, Predicate<object> canExecute)
+        public DelegateCommand(Action<object> execute)
+            : this(execute, null)
         {
-            if (execute == null)
-                throw new NullReferenceException("execute");
+        }
 
+        public DelegateCommand(Action<object> execute,
+                               Predicate<object> canExecute)
+        {
             _execute = execute;
             _canExecute = canExecute;
         }
-        public DelegateCommand(Action<object> execute) : this(execute, null)
-        {
 
-        }
+        #region ICommand Members
 
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
+        public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null ? true : _canExecute(parameter);
+            if (_canExecute == null)
+            {
+                return true;
+            }
+
+            return _canExecute(parameter);
         }
 
         public void Execute(object parameter)
         {
-            _execute.Invoke(parameter);
+            _execute(parameter);
+        }
+
+        #endregion
+
+        public void RaiseCanExecuteChanged()
+        {
+            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

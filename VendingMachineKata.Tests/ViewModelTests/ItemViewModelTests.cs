@@ -23,7 +23,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         [Test]
         public void WhenRefillIsCalledQuantityShouldBe15()
         {
-            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
+            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00m);
             chips.RefillIndividualItemType();
 
             Assert.AreEqual(15, chips.Quantity);
@@ -31,7 +31,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         [Test]
         public void WhenRefillIsCalledMoreThanOnceQuantityShouldBe15()
         {
-            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
+            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00m);
             chips.RefillIndividualItemType();
             chips.RefillIndividualItemType();
             Assert.AreEqual(15, chips.Quantity);
@@ -39,7 +39,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         [Test]
         public void WhenEmptyIsCalledQuantityIsZero()
         {
-            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
+            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00m);
             chips.RefillIndividualItemType();
             chips.EmptyIndividualItemType();
             Assert.AreEqual(0, chips.Quantity);
@@ -47,7 +47,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         [Test]
         public void CallingDispenseSubtractsOneItemFromViewModel()
         {
-            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
+            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00m);
             chips.RefillIndividualItemType();
             chips.Dispense();
             Assert.AreEqual(14, chips.Quantity);
@@ -56,7 +56,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         [Test]
         public void CallingDispenseTwiceSubtractsTwoItemsFromViewModel()
         {
-            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
+            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00m);
             chips.RefillIndividualItemType();
             chips.Dispense();
             chips.Dispense();
@@ -66,7 +66,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
         [Test]
         public void CallingDispenseThenHittingRefillSetsQuantityBackTo15()
         {
-            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00);
+            ItemViewModel chips = new ItemViewModel(1, "Chips", 1.00m);
             chips.RefillIndividualItemType();
             chips.Dispense();
             chips.Dispense();

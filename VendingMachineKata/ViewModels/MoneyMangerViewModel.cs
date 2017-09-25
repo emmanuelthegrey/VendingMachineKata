@@ -9,9 +9,9 @@ namespace VendingMachineKata.ViewModels
 {
     public class MoneyMangerViewModel : ObservableObject
     {
-        private double _customerAmountInserted;
+        private decimal _customerAmountInserted;
 
-        public double CustomerAmountInserted
+        public decimal CustomerAmountInserted
         {
             get { return _customerAmountInserted; }
             set
@@ -21,9 +21,9 @@ namespace VendingMachineKata.ViewModels
             }
         }
 
-        private double _itemdRequestedTotalCost;
+        private decimal _itemdRequestedTotalCost;
 
-        public double ItemRequestedTotalCost
+        public decimal ItemRequestedTotalCost
         {
             get { return _itemdRequestedTotalCost; }
             set
@@ -33,9 +33,9 @@ namespace VendingMachineKata.ViewModels
             }
         }
 
-        private double _customerChangeToReturn;
+        private decimal _customerChangeToReturn;
 
-        public double CustomerChangeToReturn
+        public decimal CustomerChangeToReturn
         {
             get { return _customerChangeToReturn; }
             set
@@ -45,9 +45,9 @@ namespace VendingMachineKata.ViewModels
             }
         }
 
-        private double _machineMoneyTotal;
+        private decimal _machineMoneyTotal;
 
-        public double MachineMoneyTotal
+        public decimal MachineMoneyTotal
         {
             get { return _machineMoneyTotal; }
             set
@@ -58,8 +58,14 @@ namespace VendingMachineKata.ViewModels
             }
         }
 
+        CoinCount coinsInMachine = new CoinCount();
+
+
         public MoneyMangerViewModel()
         {
+            
+            
+
             CustomerAmountInserted = 0;
             CustomerChangeToReturn = 0;
             ItemRequestedTotalCost = 0;
@@ -67,30 +73,53 @@ namespace VendingMachineKata.ViewModels
             MachineMoneyTotal = 0;
         }
 
+
+        public int QuaterCount {
+            get {return coinsInMachine.QuaterCount; }
+        }
+
+
+
         public void Insert(CoinWeight coinWeight, CoinDiameter coinDiameter)
         {
-            double value = CalculateCoinValue(coinWeight, coinDiameter);
+
+            decimal value = CalculateCoinValue(coinWeight, coinDiameter);
+
+            if (value.Equals(0.10m))
+            {
+                coinsInMachine.DimeCount++;
+            }
+            else if (value.Equals(0.05m))
+            {
+                coinsInMachine.NickleCount++;
+            }
+            else if (value.Equals(0.25m))
+            {
+                coinsInMachine.QuaterCount++;
+            }
+
             CustomerAmountInserted += value;
         }
 
-        private double CalculateCoinValue(CoinWeight coinWeight, CoinDiameter coinDiameter)
+        private decimal CalculateCoinValue(CoinWeight coinWeight, CoinDiameter coinDiameter)
         {
             if (coinDiameter == CoinDiameter.Dime && coinWeight == CoinWeight.Dime)
             {
-                return 0.10;
+                
+                return 0.10m;
             }
             else if (coinDiameter == CoinDiameter.Nickle && coinWeight == CoinWeight.Nickle)
             {
-                return 0.05;
+                return 0.05m;
             }
             else if (coinDiameter == CoinDiameter.Quarter && coinWeight == CoinWeight.Quarter)
             {
-                return 0.25;
+                return 0.25m;
             }
 
-            return 0.00;
+            return 0.00m;
         }
-        public void SelectedItemsPrice(double value)
+        public void SelectedItemsPrice(decimal value)
         {
             ItemRequestedTotalCost = value;
         }

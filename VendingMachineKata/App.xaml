@@ -33,18 +33,22 @@
         <Style x:Key="InformationLabel" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
         <Style x:Key="CoinButton" TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Green"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="5"/>
+            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
         </Style>
         <Style x:Key="AdminButton" TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Red"/>
             <Setter Property="Padding" Value="10"/>
             <Setter Property="Margin" Value="5"/>
+           
+            
         </Style>
     </Application.Resources>
 </Application>
