@@ -52,7 +52,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
             VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
             vendingMachineViewModel.MoneyInMachine.Insert(Models.CoinWeight.Dime, Models.CoinDiameter.Dime);
 
-            Assert.AreEqual(0.10, vendingMachineViewModel.MoneyInMachine.CustomerAmountInserted);
+            Assert.AreEqual(0.10m, vendingMachineViewModel.MoneyInMachine.CustomerAmountInserted);
         }
 
         [Test]
@@ -72,7 +72,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
             VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
             vendingMachineViewModel.InsertDime();
 
-            Assert.AreEqual(0.10, vendingMachineViewModel.MoneyInMachine.CustomerAmountInserted);
+            Assert.AreEqual(0.10m, vendingMachineViewModel.MoneyInMachine.CustomerAmountInserted);
         }
 
         [Test]
@@ -82,7 +82,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
             vendingMachineViewModel.InsertDime();
             vendingMachineViewModel.InsertDime();
             vendingMachineViewModel.InsertDime();
-            Assert.That( 0.30, Is.EqualTo(vendingMachineViewModel.MoneyInMachine.CustomerAmountInserted).Within(0.005));
+            Assert.AreEqual( 0.30m,vendingMachineViewModel.MoneyInMachine.CustomerAmountInserted);
         }
         [Test]
         public void ReturnChangeMovesMoneyFromInsertedToChangeReturned()
@@ -92,7 +92,7 @@ namespace VendingMachineKata.Tests.ViewModelTests
             vendingMachineViewModel.InsertDime();
             vendingMachineViewModel.InsertDime();
             vendingMachineViewModel.ReturnChange();
-            Assert.That(0.30, Is.EqualTo(vendingMachineViewModel.MoneyInMachine.CustomerChangeToReturn).Within(0.005));
+            Assert.AreEqual(0.30m, vendingMachineViewModel.MoneyInMachine.CustomerChangeToReturn);
         }
     }
 }

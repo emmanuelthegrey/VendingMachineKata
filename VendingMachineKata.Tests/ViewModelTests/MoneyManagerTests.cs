@@ -114,5 +114,25 @@ namespace VendingMachineKata.Tests.ViewModelTests
 
             Assert.AreEqual(2, moneyMangerViewModel.QuaterCount);
         }
+
+        [Test]
+        public void IfTwoDimesAreInsertedDimeCountEqualsTwo()
+        {
+            MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
+            moneyMangerViewModel.Insert(CoinWeight.Dime, CoinDiameter.Dime);
+            moneyMangerViewModel.Insert(CoinWeight.Dime, CoinDiameter.Dime);
+
+            Assert.AreEqual(2, moneyMangerViewModel.DimeCount);
+        }
+
+        [Test]
+        public void IfTwoNickelsAreInsertedNickleCountEqualsTwo()
+        {
+            MoneyMangerViewModel moneyMangerViewModel = new MoneyMangerViewModel();
+            moneyMangerViewModel.Insert(CoinWeight.Nickle, CoinDiameter.Nickle);
+            moneyMangerViewModel.Insert(CoinWeight.Nickle, CoinDiameter.Nickle);
+
+            Assert.AreEqual(2, moneyMangerViewModel.NickleCount);
+        }
     }
 }
