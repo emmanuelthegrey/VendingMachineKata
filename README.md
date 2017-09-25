@@ -1,7 +1,15 @@
 # VendingMachineKata
 Vending Machine Kata For Pillar
 
-This is a C#/WPF Application
+This is a C#/WPF Application. Sorry for the antiquated tech stack. I am working at my first software job and all we use is C#/Winforms/WPF I mostly work on the Winforms pages so I thought I would use the more challenging WPF.
+
+You can run the app in Visual Studio. I used Nunit for my testing framework. 
+
+Once the App is started the Vending Machine starts in an Empty state. The refill button must be hit to add items to the vending machine. After That you can add money by hitting one of the coin buttons that are set to coin height and weight. 
+
+I will continue to update this app over the next few days. The coin count feature is not complete so the exact change message has not been implemented.
+
+
 
 
 
