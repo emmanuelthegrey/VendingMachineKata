@@ -78,6 +78,16 @@ namespace VendingMachineKata.ViewModels
             get {return coinsInMachine.QuaterCount; }
         }
 
+        public int DimeCount
+        {
+            get { return coinsInMachine.DimeCount; }
+        }
+
+        public int NickleCount
+        {
+            get { return coinsInMachine.NickleCount; }
+        }
+
 
 
         public void Insert(CoinWeight coinWeight, CoinDiameter coinDiameter)
