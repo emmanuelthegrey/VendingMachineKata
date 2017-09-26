@@ -78,6 +78,7 @@ namespace VendingMachineKata.ViewModels
             if(selectedItem.Item.Name.Equals("Portal Gun") && MoneyInMachine.BadCoinCount == 1)
             {
                 selectedItem.Dispense();
+                MessageBox.Show("Run For You Life! Rick Citadel will arrive in 5 mins");
             }
             MoneyInMachine.SelectedItemsPrice(selectedItem.Item.Price);
 
@@ -88,7 +89,7 @@ namespace VendingMachineKata.ViewModels
                     MoneyInMachine.Tranaction();
                     //Update Property for Title TextBlock
                     if(MoneyInMachine.DimeCount > 1)
-                    ExactChangeMessage = "";
+                    ExactChangeMessage = "Insert Coin";
                 }
             }
         }

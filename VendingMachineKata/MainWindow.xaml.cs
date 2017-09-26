@@ -73,7 +73,7 @@ namespace VendingMachineKata
             }
             else
             {
-                _rickAndMortysVendingMachine.ExactChangeMessage = "";
+                _rickAndMortysVendingMachine.ExactChangeMessage = "Insert Coin";
             }
         }
     }
