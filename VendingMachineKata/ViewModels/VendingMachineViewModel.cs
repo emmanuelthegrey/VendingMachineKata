@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using VendingMachineKata.Models;
 
 namespace VendingMachineKata.ViewModels
@@ -14,10 +15,9 @@ namespace VendingMachineKata.ViewModels
         public DelegateCommand PurchaseCommand { get; private set; }
         public DelegateCommand RefillCommand { get; private set; }
 
-        
-        
+        public ItemViewModel SelectedItem { get; set; }
 
-       public ObservableCollection<ItemViewModel> Items { get; set; }
+        public ObservableCollection<ItemViewModel> Items { get; set; }
         public MoneyMangerViewModel MoneyInMachine { get; set; }
 
         public VendingMachineViewModel()
@@ -67,9 +67,18 @@ namespace VendingMachineKata.ViewModels
             }
         }
 
+        internal void InsertBadCoin()
+        {
+            InsertChangeIntoMachine(CoinWeight.BadCoin, CoinDiameter.BadCoin);
+        }
+
         public void Purchase(object itemViewModel)
         {
             var selectedItem = itemViewModel as ItemViewModel;
+            if(selectedItem.Item.Name.Equals("Portal Gun") && MoneyInMachine.BadCoinCount == 1)
+            {
+                selectedItem.Dispense();
+            }
             MoneyInMachine.SelectedItemsPrice(selectedItem.Item.Price);
 
             if (MoneyInMachine.IsInsertedValueGreaterThanOrEqualToSelectedItemsPrice())
@@ -78,6 +87,8 @@ namespace VendingMachineKata.ViewModels
                 {
                     MoneyInMachine.Tranaction();
                     //Update Property for Title TextBlock
+                    if(MoneyInMachine.DimeCount > 1)
+                    ExactChangeMessage = "";
                 }
             }
         }
@@ -96,10 +107,14 @@ namespace VendingMachineKata.ViewModels
                 MoneyInMachine.CustomerAmountInserted = 0;
             }
         }
+        private string _exactChangeMessage;
 
-        public void AddQuater()
+        public string ExactChangeMessage
         {
-
+            get { return _exactChangeMessage; }
+            set { _exactChangeMessage = value; OnPropertyChanged("ExactChangeMessage"); }
         }
+
+
     }
 }

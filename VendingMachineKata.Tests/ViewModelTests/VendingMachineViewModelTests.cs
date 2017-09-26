@@ -94,5 +94,15 @@ namespace VendingMachineKata.Tests.ViewModelTests
             vendingMachineViewModel.ReturnChange();
             Assert.AreEqual(0.30m, vendingMachineViewModel.MoneyInMachine.CustomerChangeToReturn);
         }
+
+        [Test]
+        public void GetTheGun()
+        {
+            VendingMachineViewModel vendingMachineViewModel = new VendingMachineViewModel();
+            vendingMachineViewModel.Refill();
+            vendingMachineViewModel.InsertChangeIntoMachine(Models.CoinWeight.BadCoin, Models.CoinDiameter.BadCoin);
+            vendingMachineViewModel.Purchase(vendingMachineViewModel.Items[3]);
+            Assert.AreEqual(0, vendingMachineViewModel.Items[3].Quantity);
+        }
     }
 }

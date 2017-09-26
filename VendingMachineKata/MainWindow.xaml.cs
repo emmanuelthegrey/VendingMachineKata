@@ -55,5 +55,26 @@ namespace VendingMachineKata
         {
             _rickAndMortysVendingMachine.ReturnChange();
         }
+
+        private void OnClick_InsertBadCoin(object sender, RoutedEventArgs e)
+        {
+            _rickAndMortysVendingMachine.InsertBadCoin();
+
+            
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItem = ((ListView)sender).SelectedItem as ItemViewModel;
+
+             if (selectedItem.Item.Price == 0.65M && _rickAndMortysVendingMachine.MoneyInMachine.DimeCount < 1)
+            {
+                _rickAndMortysVendingMachine.ExactChangeMessage = "Exact Change Needed";
+            }
+            else
+            {
+                _rickAndMortysVendingMachine.ExactChangeMessage = "";
+            }
+        }
     }
 }

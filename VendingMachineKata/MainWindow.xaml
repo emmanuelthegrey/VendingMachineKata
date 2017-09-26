@@ -32,7 +32,7 @@
             </StackPanel>
         </StackPanel>
 
-        <ListView Style="{StaticResource VendingList}" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="4" ItemsSource="{Binding Items}">
+        <ListView Style="{StaticResource VendingList}" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="4" ItemsSource="{Binding Items}" SelectionChanged="ListView_SelectionChanged"  >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <DockPanel>
@@ -58,7 +58,7 @@
         <Button Style="{StaticResource CoinButton}" Grid.Row="6" Grid.Column="2" Click="OnClick_InsertQuater">
             $0.25
         </Button>
-        <Button Style="{StaticResource CoinButton}" Grid.Row="7" Grid.Column="1" >
+        <Button Style="{StaticResource CoinButton}" Grid.Row="7" Grid.Column="1" Click="OnClick_InsertBadCoin" >
             Invalid Coin
         </Button>
         <Button Style="{StaticResource CoinButton}" Grid.Row="5" Grid.Column="1" Click="OnClick_ReturnChange" >
@@ -75,6 +75,7 @@
                 <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16" Text="{Binding Items[1].ItemNameDisplay}"/>
                 <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16" Text="{Binding Items[2].ItemNameDisplay}"/>
                 <TextBlock Margin="5" Style="{StaticResource InformationLabel}" FontSize="16" Text="{Binding Items[3].ItemNameDisplay}"/>
+                <TextBlock Margin="7" FontSize="12" Foreground="Red" Text="{Binding ExactChangeMessage}" />
             </StackPanel>
         </DockPanel>
 
