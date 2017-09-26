@@ -7,7 +7,9 @@ You can run the app in Visual Studio. I used Nunit for my testing framework.
 
 Once the App is started the Vending Machine starts in an Empty state. The refill button must be hit to add items to the vending machine. After That you can add money by hitting one of the coin buttons that are set to coin daimeter and weight. There is a button that also simulates invalid coins. 
 
-This is my first attempt at TDD and I never unit test at work. Howevew, I am now excited to unit test at work. Although I am trying to figure out how to use it for events and a few other aspects of WPF/MVVM
+This is my first attempt at TDD and I never unit test at work. Howevew, I am now excited to unit test at work. Although I am trying to figure out how to use it for events and a few other aspects of WPF/MVVM. That being said I did not figure out how to test much of the view. I did find some online videos that specifically help with this and will be looking over them in the next few weeks.
+
+Oh there is an easter egg that I put in to show my love for Rick and Morty. It just takes one invalid coin.
 
 
 
