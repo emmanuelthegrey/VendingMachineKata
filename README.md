@@ -5,9 +5,10 @@ This is a C#/WPF Application. Sorry for the antiquated tech stack. I am working 
 
 You can run the app in Visual Studio. I used Nunit for my testing framework. 
 
-Once the App is started the Vending Machine starts in an Empty state. The refill button must be hit to add items to the vending machine. After That you can add money by hitting one of the coin buttons that are set to coin height and weight. 
+Once the App is started the Vending Machine starts in an Empty state. The refill button must be hit to add items to the vending machine. After That you can add money by hitting one of the coin buttons that are set to coin daimeter and weight. There is a button that also simulates invalid coins. 
 
-I will continue to update this app over the next few days. The coin count feature is not complete so the exact change message has not been implemented.
+This is my first attempt at TDD and I never unit test at work. Howevew, I am now excited to unit test at work. Although I am trying to figure out how to use it for events and a few other aspects of WPF/MVVM
+
 
 
 
